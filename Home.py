@@ -90,7 +90,7 @@ cols[1].dataframe(
 )
 
 cols[2].subheader("Seggi")
-cols[2].write(pd.Series(dhont_results_by_list))
+cols[2].write(pd.Series(dhont_results_by_list, name="n_seggi"))
 sum_seats = pd.Series(dhont_results_by_list).sum()
 cols[2].write(f"Tot seggi: {sum_seats}")
 
@@ -99,7 +99,7 @@ st.header("Coalizioni")
 cols = st.columns((1, 1, 1))
 
 cols[0].subheader("Voti")
-cols[0].dataframe(pd.Series(coalitions_votes))
+cols[0].dataframe(pd.Series(coalitions_votes, name="n_voti"))
 tot_votes = pd.Series(coalitions_votes).sum()
 cols[0].write(f"Tot seggi: {tot_votes}")
 
@@ -112,7 +112,7 @@ cols[1].dataframe(
 )
 
 cols[2].subheader("Seggi")
-cols[2].dataframe(pd.Series(dhont_results_coalizioni))
+cols[2].dataframe(pd.Series(dhont_results_coalizioni, name="n_seggi"))
 tot_seats = pd.Series(dhont_results_coalizioni).sum()
 cols[2].write(f"Tot seggi: {tot_seats}")
 
